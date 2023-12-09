@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CategoryController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,11 @@ Route::prefix('v1')->group(function () {
     Route::post('/customers/{id}', [CustomerController::class, 'update']);
     Route::post('/customers/{id}/status', [CustomerController::class, 'updateStatus']);
     Route::delete('/customers/{id}', [CustomerController::class, 'destroy']);
+
+    Route::get('/category', [CategoryController::class, 'index']);
+    Route::get('/category/{id}', [CategoryController::class, 'show']);
+    Route::post('/category', [CategoryController::class, 'store']);
+    Route::put('/category/{id}', [CategoryController::class, 'update']);
+    Route::put('/category/{id}/status', [CategoryController::class, 'updateStatus']);
+    Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
 });

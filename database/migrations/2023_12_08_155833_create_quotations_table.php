@@ -24,7 +24,6 @@ return new class extends Migration
             $table->integer('discount_amount');
             $table->integer('shipping_amount')->default(0);
             $table->integer('total_amount');
-            $table->tinyInteger('status');
             $table->text('note')->nullable();
             $table->enum('status', ['active', 'inactive', 'deleted'])->default('active');
             $table->timestamps();
