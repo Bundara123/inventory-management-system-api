@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/images/{filename}', [ImageController::class, 'show']);
 Route::get('/', function () {
     return view('welcome');
 });
